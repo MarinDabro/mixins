@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin style($color) {
+    @include flex( column, space-around, flex-start );
+
+    background-color: $color;
+    color: $color;
+}
+
+body {
+    min-width: 400px;
+}
+
+main {
+    @include flex( row, center, center );
+    min-height: 100vh;
+}
+
+section {
+    @include flex ( row, center, center );
+    
+    width: 70%;
+    border-radius: 15px;
+    box-shadow: -10px -10px 20px gray;
+}
+
+.card {
+    @include style( teal );
+    padding: 40px;
+    height: 600px;
+
+    div {
+        background-color: rgba(0, 0, 0, 0.4);
+        height: 35px;
+        width: 35px;
+        border-radius: 180px;
+
+        i {
+            color: rgba(255, 255, 255, 0.507);
+            position: relative;
+            right: -15px;
+            top: 8px;
+        }
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    h2, p, a {
+        color: white;
+        font-weight: bold;
+    }
+
+    a {
+        background-color: white;
+        padding: 13px 25px;
+        border-radius: 20px;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    a:hover {
+        transform: scale(1.05);
+        box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.8),
+        -3px -3px 10px rgba(255, 255, 255, 0.8);
+    }
+}
+.card:first-of-type {
+    @include style( orange );
+    border-radius: 10px 0 0 10px;
+}
+.card:last-of-type {
+    @include style( rgb(1, 66, 66) );
+    border-radius: 0 10px 10px 0;
+}
+
+@media (max-width: 900px) {
+    section {
+        @include flex( column, center, center );
+        margin: 50px;
+    }
+
+    .card {
+        height: 400px;
+    }
+
+    .card:first-of-type {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .card:last-of-type {
+        border-radius: 0 0 10px 10px;
+    }
+}
+
+@media (max-width: 550px) {
+    section {
+        width: 100%;
+        font-size: 0.9em;
+    }
+}
+
+
