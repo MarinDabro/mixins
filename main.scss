@@ -29,16 +29,20 @@ main {
 
 section {
     @include flex ( row, center, center );
-    
+
+    flex-wrap: wrap;
+    margin: 50px auto;
     width: 70%;
-    border-radius: 15px;
-    box-shadow: -10px -10px 20px gray;
 }
 
 .card {
     @include style( teal );
     padding: 40px;
     height: 600px;
+    width: 45%;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: -5px -5px 15px gray;
 
     div {
         background-color: rgba(0, 0, 0, 0.4);
@@ -61,6 +65,7 @@ section {
     h2, p, a {
         color: white;
         font-weight: bold;
+        text-shadow: -1px -1px 1px black;
     }
 
     a {
@@ -69,6 +74,7 @@ section {
         border-radius: 20px;
         color: inherit;
         text-decoration: none;
+        font-size: 1.2em;
     }
 
     a:hover {
@@ -79,33 +85,60 @@ section {
 }
 .card:first-of-type {
     @include style( orange );
-    border-radius: 10px 0 0 10px;
+    /* border-radius: 10px 0 0 10px; */
+}
+.card:nth-of-type(3) {
+    @include style( pink )
+}
+.card:nth-of-type(4) {
+    @include style( yellow )
+}
+.card:nth-of-type(5) {
+    @include style( lightsalmon )
 }
 .card:last-of-type {
     @include style( rgb(1, 66, 66) );
-    border-radius: 0 10px 10px 0;
+   /*  border-radius: 0 10px 10px 0; */
+}
+.card:hover {
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+    box-shadow: -30px -30px 30px rgba(128, 128, 128, 0.466);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
     section {
         @include flex( column, center, center );
         margin: 50px;
+        border-radius: 15px;
+        box-shadow: -10px -10px 20px gray;
+        width: 60%;
     }
 
     .card {
         height: 400px;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
     }
 
     .card:first-of-type {
         border-radius: 10px 10px 0 0;
     }
 
+
     .card:last-of-type {
         border-radius: 0 0 10px 10px;
     }
+    .card:hover {
+        transform: scale(1.05);
+        transition-duration: 0.2s;
+        box-shadow: -15px -15px 15px rgba(128, 128, 128, 0.466);
+    }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
     section {
         width: 100%;
         font-size: 0.9em;

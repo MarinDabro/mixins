@@ -40,10 +40,10 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 50px auto;
   width: 70%;
-  border-radius: 15px;
-  -webkit-box-shadow: -10px -10px 20px gray;
-          box-shadow: -10px -10px 20px gray;
 }
 
 .card {
@@ -63,6 +63,11 @@ section {
   color: teal;
   padding: 40px;
   height: 600px;
+  width: 45%;
+  margin: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: -5px -5px 15px gray;
+          box-shadow: -5px -5px 15px gray;
 }
 
 .card div {
@@ -86,6 +91,7 @@ section {
 .card h2, .card p, .card a {
   color: white;
   font-weight: bold;
+  text-shadow: -1px -1px 1px black;
 }
 
 .card a {
@@ -94,6 +100,7 @@ section {
   border-radius: 20px;
   color: inherit;
   text-decoration: none;
+  font-size: 1.2em;
 }
 
 .card a:hover {
@@ -118,7 +125,58 @@ section {
           align-items: flex-start;
   background-color: orange;
   color: orange;
-  border-radius: 10px 0 0 10px;
+  /* border-radius: 10px 0 0 10px; */
+}
+
+.card:nth-of-type(3) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: pink;
+  color: pink;
+}
+
+.card:nth-of-type(4) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: yellow;
+  color: yellow;
+}
+
+.card:nth-of-type(5) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background-color: lightsalmon;
+  color: lightsalmon;
 }
 
 .card:last-of-type {
@@ -136,10 +194,19 @@ section {
           align-items: flex-start;
   background-color: #014242;
   color: #014242;
-  border-radius: 0 10px 10px 0;
+  /*  border-radius: 0 10px 10px 0; */
 }
 
-@media (max-width: 900px) {
+.card:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-box-shadow: -30px -30px 30px rgba(128, 128, 128, 0.466);
+          box-shadow: -30px -30px 30px rgba(128, 128, 128, 0.466);
+}
+
+@media (max-width: 1100px) {
   section {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -155,9 +222,18 @@ section {
         -ms-flex-align: center;
             align-items: center;
     margin: 50px;
+    border-radius: 15px;
+    -webkit-box-shadow: -10px -10px 20px gray;
+            box-shadow: -10px -10px 20px gray;
+    width: 60%;
   }
   .card {
     height: 400px;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
   .card:first-of-type {
     border-radius: 10px 10px 0 0;
@@ -165,9 +241,17 @@ section {
   .card:last-of-type {
     border-radius: 0 0 10px 10px;
   }
+  .card:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    -webkit-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+    -webkit-box-shadow: -15px -15px 15px rgba(128, 128, 128, 0.466);
+            box-shadow: -15px -15px 15px rgba(128, 128, 128, 0.466);
+  }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
   section {
     width: 100%;
     font-size: 0.9em;
